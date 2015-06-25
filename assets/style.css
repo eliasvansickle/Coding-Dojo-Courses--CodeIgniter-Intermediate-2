@@ -1,0 +1,30 @@
+#wrapper {
+	width: 500px;
+	min-height: 500px;
+	margin: 0 auto;
+}
+	#top {
+
+	}
+		#top form input {
+			display: block;
+			vertical-align: top;
+			margin: 20px 0px 0px 0px;
+		}
+		input.name {
+			width: 200px;
+		}
+		input.description {
+			width: 200px;
+			height: 100px;
+		}
+	#bottom {
+
+	}
+		#bottom table {
+			border-collapse: collapse;
+		}
+		#bottom td, #bottom th {
+			border: 1px solid black;
+			padding: 15px;
+		}
