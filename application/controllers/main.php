@@ -19,7 +19,6 @@ class Main extends CI_Controller
 	}
 	public function add()
 	{
-		$this->session->sess_destroy;
 		$this->load->model('CourseDB');
 		$course_data = array(
 			'name' => $this->input->post('name'),
@@ -28,14 +27,16 @@ class Main extends CI_Controller
 		$this->CourseDB->add_course($course_data);
 		redirect('/');
 	}
-	public function delete()
+	public function remove($id)
 	{
-		// die('here');
-		// $this->load->model('CourseDB');
-		// $delete_selection = $this->CourseDB->delete_course();
-		// $this->load->view('delete_course', array(
-		// 	'del' => $delete_selection
-		// 	));
-
+		$this->load->model('CourseDB');
+		$specific_course = $this->CourseDB->get_specific_course($id);
+		$this->load->view('delete_course', $specific_course);
+	}
+	public function delete($id)
+	{
+		$this->load->model('CourseDB');
+		$this->CourseDB->delete_course($id);
+		redirect('/');
 	}
 }
